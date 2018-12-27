@@ -64,6 +64,8 @@ _HEALTH_STATUSES = {
 class RPLidarException(Exception):
     '''Basic exception class for RPLidar'''
 
+def __init__(self):
+    self.a = 1
 
 def _b2i(byte):
     '''Converts byte to integer (for Python 2 compatability)'''
