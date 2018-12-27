@@ -283,7 +283,7 @@ class RPLidar(object):
         ----------
         max_buf_meas : int
             Maximum number of measurments to be stored inside the buffer. Once
-            numbe exceeds this limit buffer will be emptied out.
+            number exceeds this limit buffer will be emptied out.
 
         Yields
         ------

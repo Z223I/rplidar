@@ -18,9 +18,12 @@ def run(path):
     try:
         print('Recording measurments... Press Crl+C to stop.')
         for scan in lidar.iter_scans():
+            print( scan )
+            for item in scan:
+                print( item)
             data.append(np.array(scan))
     except KeyboardInterrupt:
-        print('Stoping.')
+        print('Stopping.')
     lidar.stop()
     lidar.disconnect()
     np.save(path, np.array(data))
