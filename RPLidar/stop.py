@@ -2,7 +2,7 @@
 
 import sys
 import numpy as np
-from rplidar import RPLidar
+from RPLidar import RPLidar
 
 
 PORT_NAME = '/dev/ttyUSB0'
