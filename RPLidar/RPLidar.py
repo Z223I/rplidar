@@ -160,6 +160,7 @@ class RPLidar(object):
         self.logger.info('Stoping motor')
         # For A2
         self.set_pwm(0)
+        self.motor_running = False
         time.sleep(.001)
         # For A1
         #self._serial_port.dtr = True
