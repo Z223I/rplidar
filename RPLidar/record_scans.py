@@ -13,7 +13,9 @@ PORT_NAME = '/dev/ttyUSB0'
 
 def run(path):
     '''Main function'''
-    lidar = RPLidar(PORT_NAME)
+    lidar = RPLidar()
+    lidar.init(PORT_NAME)
+
     data = []
     try:
         print('Recording measurments... Press Crl+C to stop.')
