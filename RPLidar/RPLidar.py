@@ -1,27 +1,5 @@
-'''Simple and lightweight module for working with RPLidar rangefinder scanners.
+#!/usr/bin/env python3
 
-Usage example:
-
->>> from rplidar import RPLidar
->>> lidar = RPLidar('/dev/ttyUSB0')
->>> 
->>> info = lidar.get_info()
->>> print(info)
->>> 
->>> health = lidar.get_health()
->>> print(health)
->>> 
->>> for i, scan in enumerate(lidar.iter_scans()):
-...  print('%d: Got %d measurments' % (i, len(scan)))
-...  if i > 10:
-...   break
-...
->>> lidar.stop()
->>> lidar.stop_motor()
->>> lidar.disconnect()
-
-For additional information please refer to the RPLidar class documentation.
-'''
 import logging
 import sys
 import time
@@ -88,12 +66,6 @@ def _process_scan(raw):
 
 class RPLidar(object):
     '''Class for communicating with RPLidar rangefinder scanners'''
-
-    _serial_port = None  #: serial port connection
-    port = ''  #: Serial port name, e.g. /dev/ttyUSB0
-    timeout = 1  #: Serial port timeout
-    motor = False  #: Is motor running?
-    baudrate = 115200  #: Baudrate for serial port
 
     def init(self, port, baudrate=115200, timeout=1, logger=None):
         '''Initilize RPLidar object for communicating with the sensor.
