@@ -95,7 +95,7 @@ class RPLidar(object):
     motor = False  #: Is motor running?
     baudrate = 115200  #: Baudrate for serial port
 
-    def __init__(self, port, baudrate=115200, timeout=1, logger=None):
+    def init(self, port, baudrate=115200, timeout=1, logger=None):
         '''Initilize RPLidar object for communicating with the sensor.
 
         Parameters
@@ -364,6 +364,6 @@ class RPLidar(object):
                     yield scan
                 scan = []
             if quality > 0 and distance > 0:
-                if angle > 240.0 or angle < 120.0:
+                if angle > 270.0 or angle < 90.0:
                     scan.append((quality, (360 - angle), distance))
 

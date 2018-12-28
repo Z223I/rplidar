@@ -19,7 +19,9 @@ def update_line(num, iterator, line):
     return line,
 
 def run():
-    lidar = RPLidar(PORT_NAME)
+    lidar = RPLidar()
+    lidar.init(PORT_NAME)
+
     fig = plt.figure()
     ax = plt.subplot(111, projection='polar')
     line = ax.scatter([0, 0], [0, 0], s=5, c=[IMIN, IMAX],
