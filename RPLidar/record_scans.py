@@ -15,6 +15,7 @@ def run(path):
     '''Main function'''
     lidar = RPLidar()
     lidar.init(PORT_NAME)
+    lidar.start()
 
     data = []
     try:

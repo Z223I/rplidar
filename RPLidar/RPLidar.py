@@ -42,9 +42,6 @@ _HEALTH_STATUSES = {
 class RPLidarException(Exception):
     '''Basic exception class for RPLidar'''
 
-def __init__(self):
-    self.A = 1
-
 def _b2i(byte):
     '''Converts byte to integer (for Python 2 compatability)'''
     return byte if int(sys.version[0]) == 3 else ord(byte)
@@ -89,6 +86,8 @@ class RPLidar(object):
         if logger is None:
             logger = logging.getLogger('rplidar')
         self.logger = logger
+
+    def start(self):
         self.connect()
         self.start_motor()
 
