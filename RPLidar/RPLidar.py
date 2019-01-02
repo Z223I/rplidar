@@ -335,6 +335,6 @@ class RPLidar(object):
                     yield scan
                 scan = []
             if quality > 0 and distance > 0:
-                if angle > 270.0 or angle < 90.0:
-                    scan.append((quality, (360 - angle), distance))
+                if angle > 345.0 or angle < 15.0:
+                    scan.append((quality, angle, distance))
 

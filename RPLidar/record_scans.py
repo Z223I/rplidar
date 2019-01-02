@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+
 '''Records scans to a given file in the form of numpy array.
 Usage example:
 
